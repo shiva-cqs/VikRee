@@ -20,13 +20,13 @@ import (
 )
 
 // Declaration VSmartContractSol
-type VSmartContractSolSol struct {
+type VSmartContractSol struct {
 }
 
 //
 // <!-- Plan -->
 // Schema define attributed mapped with Plan
-type plan struct {
+type VSmartContractSol struct {
 	Id				string		`json:"id"`	
 	Name      		string 			`json:"Name"`
 	Description 	string 			`json:"Description"`
