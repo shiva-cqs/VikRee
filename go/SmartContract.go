@@ -29,7 +29,7 @@ type Contract struct {
 	object  		string 		`json:"object"`
 	id 				string 		`json:"id"`
 	name  			string 		`json:"name"`
-	partners 		[]string	`json:"partners"`
+	partners 		string		`json:"partners"`
 }
 
 
