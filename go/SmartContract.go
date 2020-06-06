@@ -79,11 +79,11 @@ func (s *SmartContract) queryContract(APIstub shim.ChaincodeStubInterface, args 
 
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) pb.Response {
 	contracts := []Contract{
-		Contract{partner_id: "a", object: "p", id: "P001", name: "Cisco Logicshore Plan", partners: "Logicshore"},
-		Contract{partner_id: "b", object: "s", id: "S001", name: "Cisco Logicshore Solution", partners: "Logicshore"},
-		Contract{partner_id: "c", object: "o", id: "O001", name: "Cisco Logicshore Opportunity", partners: "Logicshore"},
-		Contract{partner_id: "d", object: "p", id: "P001", name: "IBM Logicshore Plan", partners: "Logicshore"},
-		Contract{partner_id: "e", object: "s", id: "P001", name: "IBM Logicshore Solution", partners: "Logicshore"},
+		Contract{partner_id: "a", object: "p", id: "P001-a", name: "Cisco Logicshore Plan", partners: "Logicshore a"},
+		Contract{partner_id: "b", object: "s", id: "S001-b", name: "Cisco Logicshore Solution", partners: "Logicshore b"},
+		Contract{partner_id: "c", object: "o", id: "O001-c", name: "Cisco Logicshore Opportunity", partners: "Logicshore c"},
+		Contract{partner_id: "d", object: "p", id: "P001-d", name: "IBM Logicshore Plan", partners: "Logicshore d"},
+		Contract{partner_id: "e", object: "s", id: "P001-e", name: "IBM Logicshore Solution", partners: "Logicshore e"},
 	}
 
 	i := 0
@@ -107,7 +107,7 @@ func (s *SmartContract) createContract(APIstub shim.ChaincodeStubInterface, args
 
 	var contract = Contract{partner_id: args[1], object: args[2], id: args[3], name: args[4], partners: args[5]}
 
-	contractAsBytes, _ := json.Marshal(car)
+	contractAsBytes, _ := json.Marshal(contract)
 	APIstub.PutState(args[0], contractAsBytes)
 
 	return shim.Success(nil)
