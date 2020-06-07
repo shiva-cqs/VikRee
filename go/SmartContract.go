@@ -101,8 +101,8 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) pb.Respo
 
 func (s *SmartContract) createContract(APIstub shim.ChaincodeStubInterface, args []string) pb.Response {
 
-	if len(args) != 6 {
-		return shim.Error("Incorrect number of arguments. Expecting 6")
+	if len(args) != 5 {
+		return shim.Error("Incorrect number of arguments. Expecting 5")
 	}
 
 	var contract = Contract{partner_id: args[1], object: args[2], id: args[3], name: args[4], partners: args[5]}
